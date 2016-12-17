@@ -1,0 +1,30 @@
+{
+  "name": "busy-alien",
+  "version": "1.0.0",
+  "description": "Simple streaming communication mapping between ExpressJS and business endpoints",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonworks/busy-alien.git"
+  },
+  "keywords": [
+    "express",
+    "websocket"
+  ],
+  "author": "Mika Wikman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nonworks/busy-alien/issues"
+  },
+  "homepage": "https://github.com/nonworks/busy-alien#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "express-ws": "^2.0.0"
+  }
+}
