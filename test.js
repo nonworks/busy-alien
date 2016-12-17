@@ -60,6 +60,11 @@ describe('Busy Alien', function(){
             getMessage().should.be.deep.equal(['drip', { some: 'stuff' }, null]);
         });
 
+        it('should relay session id to business functions', function(){
+            sendMessage(['salmon', { echo_session: { } }]);
+            getMessage().should.be.deep.equal(['drip', { echo: '123' }, null]);
+        });
+
         it('should get a list of active sessions', function(){
             busyAlien.getSessions().should.be.deep.equal(['123']);
         });

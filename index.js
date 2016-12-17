@@ -35,7 +35,11 @@ BusyAlien = function(app, VERSION, folder, expressWS){
                         return;
                     }
 
-                    logic({ session, args: v }, cb)
+                    logic({
+                        session: session.id, 
+                        args: v 
+                    }, cb);
+
                 } catch(e){
                     console.error(e);
                 }
