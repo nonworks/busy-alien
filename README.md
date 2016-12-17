@@ -49,24 +49,24 @@ module.exports = function(stuff, cb){
 
 ## Communication protocol
 
-Upon connecting, the server will send ['version', 'whatever-version-was-set']. This is to ensure
+Upon connecting, the server will send `['version', 'whatever-version-was-set']`. This is to ensure
 that the client is capable of communicating with this server.
 
-Every message received must be an array with the structure [command, arguments, referenceId].
+Every message received must be an array with the structure `[command, arguments, referenceId]`.
 
-* command: 'get', 'salmon' or 'ping'
-* arguments: Must be object, may contain any data serializable by JSON
-* referenceId: An ID that will be provided with any data entries being returned
+* *command*: 'get', 'salmon' or 'ping'
+* *arguments*: Must be object, may contain any data serializable by JSON
+* *referenceId*: An ID that will be provided with any data entries being returned
 
 Any message sent will be on the same structure, where command may be 'drip' or 'pong'
 
 Commands:
 
-* get: A request from the client to receive one or more resources. Each key in arguments is a resource,
+* *get*: A request from the client to receive one or more resources. Each key in arguments is a resource,
   its value will be sent to the handling function
-* salmon: A request from client to push data updates upstreams (like a salmon). The update may be created, deleted or updated.
-* ping: A request to keep the connection alive, will answer pong
-* drip: A notification sent from server to notify client that a resource has changed (updated, deleted or created)
+* *salmon*: A request from client to push data updates upstreams (like a salmon). The update may be created, deleted or updated.
+* *ping*: A request to keep the connection alive, will answer pong
+* *drip*: A notification sent from server to notify client that a resource has changed (updated, deleted or created)
 
 What action are taken by server on a resource depends on what arguments are provided.
 
@@ -79,7 +79,7 @@ because the isDeleted flag will be set.
 
 ### Special resource _session_
 
-If a resource is returned by server which is called _session_ and has an `id` key, this key
+If a resource is returned by server which is called *session* and has an `id` key, this key
 will be persisted to this connection and set for all further requests.
 
 If the session is to be removed, simply send it with an `isDeleted` flag.
